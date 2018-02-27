@@ -1,7 +1,16 @@
+def get_ratio(place1, place2, place):
+    ratio = int(place[place1]) / int(place[place2])
+    return ratio
+
+def display_place_list(place):
+    for i in len(place):
+        print(place[i][0], ":", get_ratio(place[i][1], "筑波大学", place))
+        i += 1
 
 place = {"筑波キャンパス" : 2577286}
 
 i = 0
+print("データを入力してください。「.」を入力したら終了です。")
 while i < 100:
     new_place = input().split()
     if new_place[0] == ".":
