@@ -14,15 +14,17 @@ def station_list(name, station, time):
     jikan = 0
     eki = []
     num = station.index(kousya)
-    print("{0}駅は、{1}番目の駅です".format(name, num))
+    print("{0}駅は、{1}つ目の駅です".format(name, num))
     print("==============================")
     print("[外回り]")
     for i in range(num + 1):
         jikan += time[i]
         eki.append(eki_soto[i])
         i += 1
-    print(eki)
-    print("乗車時間は%d分です。" % int(jikan - time[i]))
+    kousyaeki = '==>'.join(eki)
+    print(kousyaeki)
+    print("乗車時間は%d分です。" % int(jikan - time[i-1]))
+
 
 if exist(kousya, eki_soto):
     station_list(kousya, eki_soto, jikan_soto)
